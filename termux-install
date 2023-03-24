@@ -37,3 +37,5 @@ echo "--downloader-args aria2c:'-x16 -s16 --retry-wait=1'" >> ~/yt-dlp.conf
 
 echo ""
 echo "完成!!"
+sleep 3
+exit
