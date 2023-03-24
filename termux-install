@@ -4,7 +4,7 @@ echo "Do you want to run termux-setup-storage? (y/n) "
 echo "This is only required the first time."
 echo
 echo "termux-setup-storageを実行しますか？ (y/n) "
-echo "これは初回のみ必要です。"
+echo "基本的には、yを選択してください。"
 read  -p " -> " SELECT
 
 if [ $SELECT = y -o $SELECT = Y ]
@@ -19,11 +19,11 @@ fi
 
 echo "Updating package list..."
 sleep 3s
-apt update && apt upgrade -y
+pkg upgrade -y
 
 echo "Install required packages..."
 sleep 3s
-apt update && apt install -y nano curl python ffmpeg
+apt update && apt install -y nano curl python ffmpeg aria2
 
 echo "Install yt-dlp via pip..."
 sleep 3s
@@ -32,9 +32,13 @@ pip install -U yt-dlp
 echo "Downloading termux-url-opener..."
 sleep 3s
 mkdir ~/bin && curl https://raw.githubusercontent.com/N-yuto-A/yt-dlp-termux/main/termux-url-opener -o ~/bin/termux-url-opener && chmod +x ~/bin/termux-url-opener
+echo -U >> ~/yt-dlp.conf
+echo --embed-thumbnail >> ~/yt-dlp.conf
+echo --embed-metadata >> ~/yt-dlp.conf
+echo -f b >> ~/yt-dlp.conf
+echo --downloader aria2c >> ~/yt-dlp.conf
+echo --downloader-args aria2c:"-x16 -s16 --retry-wait=1" >> ~/yt-dlp.conf
+
 
 echo ""
 echo "All done!!"
-echo "To learn how to use it, go to the following site."
-echo "使い方を知りたい場合は以下のサイトを閲覧してください。"
-echo "https://datsuka-qwerty.hatenablog.com/entry/androidtips/termux-youtube-dl"
