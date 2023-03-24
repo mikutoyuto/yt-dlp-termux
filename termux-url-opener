@@ -14,7 +14,6 @@ echo "6)終了"
 echo
 echo "11)通常ダウンロード"
 echo "22)通常音声ダウンロード"
-echo "99)yt-dlpを更新"
 echo
 read  -p " -> " SELECT
 echo "${SELECT}を選択しました"
@@ -60,10 +59,6 @@ then
 elif [ "$SELECT" -eq "22" ]
 then
 	yt-dlp -x -o "$SAVE_PATH%(title)s.%(ext)s" $1
-elif [ "$SELECT" -eq "99" ]
-then
-	pip install yt-dlp -U
-	exit
 else
 	echo "やり直してください:-("
 	sleep 2s
