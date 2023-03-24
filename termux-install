@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo "Do you want to run termux-setup-storage? (y/n) "
-echo "This is only required the first time."
 echo
 echo "termux-setup-storageを実行しますか？ (y/n) "
 echo "基本的には、yを選択してください。"
@@ -10,9 +8,6 @@ read  -p " -> " SELECT
 if [ $SELECT = y -o $SELECT = Y ]
 then
 	termux-setup-storage
-	echo "After granting access to the storage, press any key to continue."
-	echo "ストレージへのアクセス許可をしたら、なにかキーを押して続行してください。"
-	read -p "Press any key to continue... "
 else
 	echo "Skipped"
 fi
@@ -33,12 +28,12 @@ echo "Downloading termux-url-opener..."
 sleep 3s
 mkdir ~/bin && curl https://raw.githubusercontent.com/mikutoyuto/yt-dlp-termux/main/termux-url-opener -o ~/bin/termux-url-opener && chmod +x ~/bin/termux-url-opener
 echo -U >> ~/yt-dlp.conf
+echo -f b >> ~/yt-dlp.conf
 echo --embed-thumbnail >> ~/yt-dlp.conf
 echo --embed-metadata >> ~/yt-dlp.conf
 echo --embed-chapters >> ~/yt-dlp.conf
-echo -f b >> ~/yt-dlp.conf
 echo --downloader aria2c >> ~/yt-dlp.conf
 echo "--downloader-args aria2c:'-x16 -s16 --retry-wait=1'" >> ~/yt-dlp.conf
 
 echo ""
-echo "All done!!"
+echo "完成!!"
