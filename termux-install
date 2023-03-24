@@ -37,8 +37,7 @@ echo --embed-thumbnail >> ~/yt-dlp.conf
 echo --embed-metadata >> ~/yt-dlp.conf
 echo -f b >> ~/yt-dlp.conf
 echo --downloader aria2c >> ~/yt-dlp.conf
-echo --downloader-args aria2c:'-x16 -s16 --retry-wait=1' >> ~/yt-dlp.conf
-
+echo "--downloader-args aria2c:'-x16 -s16 --retry-wait=1'" >> ~/yt-dlp.conf
 
 echo ""
 echo "All done!!"
