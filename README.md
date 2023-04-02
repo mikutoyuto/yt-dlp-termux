@@ -19,5 +19,5 @@ sh <(curl -s https://raw.githubusercontent.com/mikutoyuto/yt-dlp-termux/main/ter
 動画をダウンロードするには1または11、音声をダウンロードするには4または22を入力
 ![image](https://user-images.githubusercontent.com/128672410/229114901-050e9e97-3ffa-4789-98e6-2e61545dfb63.png)
 ダウンロードした動画、音声はFilesアプリの内部ストレージ→Movies→youtube-dlフォルダから閲覧可能
-<sub>時間経ったらフォトからも見れるようになるけどね</sub>
+<sub>(時間経ったらフォトからも見れるようになる)</sub>
 ![image](https://user-images.githubusercontent.com/128672410/229114921-1b193210-a23c-4ada-973d-3a8af5f5c334.png)
