@@ -2,7 +2,6 @@
 termuxで以下のコマンドを実行で自動セットアップ
 ```
 sh <(curl -s https://raw.githubusercontent.com/mikutoyuto/yt-dlp-termux/main/termux-install)
-
 ```
 # 使用方法
 ## Revanced Extendedの場合
