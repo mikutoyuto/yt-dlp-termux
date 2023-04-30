@@ -6,7 +6,7 @@ SAVE_PATH="~/storage/movies/youtube-dl/"
 echo "どれをダウンロードしたいですか?"
 echo
 echo "1)動画"
-echo "2)プレイリスト"
+echo "2)再生リスト"
 echo "3)チャンネル"
 echo "4)音声"
 echo
