@@ -20,9 +20,10 @@ echo "Install required packages..."
 sleep 3s
 apt update && apt install -y nano curl python ffmpeg aria2
 
-echo "Install yt-dlp via pip..."
+echo "Install yt-dlp..."
 sleep 3s
-pip install -U yt-dlp
+wget -P $PREFIX/bin https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+chmod +x $PREFIX/bin/yt-dlp
 
 echo "Downloading termux-url-opener..."
 sleep 3s
