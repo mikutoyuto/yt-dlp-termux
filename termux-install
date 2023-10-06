@@ -9,30 +9,29 @@ if [ $SELECT = y -o $SELECT = Y ]
 then
 	termux-setup-storage
 else
-	echo "Skipped"
+	echo "スキップ"
 fi
 
-echo "Updating package list..."
+echo "パッケージリストを更新中..."
 sleep 3s
 pkg upgrade -y
 
-echo "Install required packages..."
+echo "必要なパッケージをインストール中..."
 sleep 3s
 apt update && apt install -y nano curl python ffmpeg aria2
 
-echo "Install yt-dlp..."
+echo "yt-dlpをインストール中..."
 sleep 3s
-wget -P $PREFIX/bin https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
-chmod +x $PREFIX/bin/yt-dlp
+pip install -U yt-dlp
 
-echo "Downloading termux-url-opener..."
+echo "termux-url-openerをダウンロード中..."
 sleep 3s
 mkdir ~/bin && curl https://raw.githubusercontent.com/mikutoyuto/yt-dlp-termux/main/termux-url-opener -o ~/bin/termux-url-opener && chmod +x ~/bin/termux-url-opener
 echo -U >> ~/yt-dlp.conf
 echo -f b >> ~/yt-dlp.conf
 echo --embed-thumbnail >> ~/yt-dlp.conf
 echo --embed-metadata >> ~/yt-dlp.conf
-echo --embed-chapters >> ~/yt-dlp.conf
+echo #--embed-chapter >> ~/yt-dlp.conf
 echo --downloader aria2c >> ~/yt-dlp.conf
 echo "--downloader-args aria2c:'-x16 -s16 --retry-wait=1'" >> ~/yt-dlp.conf
 
