@@ -1,5 +1,13 @@
 #!/bin/sh
 
+echo "パッケージリストを更新中..."
+sleep 3s
+pkg upgrade -y
+
+echo "必要なパッケージをインストール中..."
+sleep 3s
+apt update && apt install -y nano curl python ffmpeg aria2
+
 echo
 echo "termux-setup-storageを実行しますか？ (y/n) "
 echo "基本的には、yを選択してください。"
@@ -11,14 +19,6 @@ then
 else
 	echo "スキップ"
 fi
-
-echo "パッケージリストを更新中..."
-sleep 3s
-pkg upgrade -y
-
-echo "必要なパッケージをインストール中..."
-sleep 3s
-apt update && apt install -y nano curl python ffmpeg aria2
 
 echo "yt-dlpをインストール中..."
 sleep 3s
