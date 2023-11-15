@@ -6,7 +6,7 @@ pkg upgrade -y
 
 echo "必要なパッケージをインストール中..."
 sleep 3s
-apt update && apt install -y nano curl python ffmpeg aria2 rust
+apt update && apt install -y nano curl ffmpeg aria2
 
 echo
 echo "termux-setup-storageを実行しますか？ (y/n) "
@@ -22,7 +22,8 @@ fi
 
 echo "yt-dlpをインストール中..."
 sleep 3s
-pip install -U yt-dlp
+aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir ~/../usr/bin
+chmod a+rx ~/../usr/bin/yt-dlp 
 
 echo "termux-url-openerをダウンロード中..."
 sleep 3s
