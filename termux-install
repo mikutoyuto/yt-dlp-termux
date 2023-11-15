@@ -6,7 +6,7 @@ pkg upgrade -y
 
 echo "必要なパッケージをインストール中..."
 sleep 3s
-apt update && apt install -y nano curl ffmpeg aria2
+apt update && apt install -y nano curl ffmpeg aria2 python
 
 echo
 echo "termux-setup-storageを実行しますか？ (y/n) "
