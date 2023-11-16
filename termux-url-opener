@@ -14,6 +14,7 @@ echo "6)終了"
 echo
 echo "11)通常ダウンロード"
 echo "22)通常音声ダウンロード"
+echo "99)更新"
 echo
 read  -p " -> " SELECT
 echo "${SELECT}を選択しました"
