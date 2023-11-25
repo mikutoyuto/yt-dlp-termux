@@ -22,7 +22,8 @@ fi
 
 echo "yt-dlpをインストール中..."
 sleep 3s
-aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir ~/../usr/bin
+pip install yt-dlp
+# aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir ~/../usr/bin
 chmod a+rx ~/../usr/bin/yt-dlp 
 
 echo "termux-url-openerをダウンロード中..."
