@@ -12,7 +12,7 @@ echo "4)音声"
 echo
 echo "6)終了"
 echo
-echo "11)通常ダウンロード"
+echo "11)mkvで通常ダウンロード(最高画質を最速で)"
 echo "22)通常音声ダウンロード"
 echo "99)更新"
 echo
@@ -21,13 +21,13 @@ echo "${SELECT}を選択しました"
 
 if [ "$SELECT" -eq "1" ]
 then
-	yt-dlp -o "$SAVE_PATH%(title)s.%(ext)s" $1
+	yt-dlp -o "$SAVE_PATH%(title)s.%(ext)s" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" $1
 elif [ "$SELECT" -eq "2" ]
 then
-	yt-dlp -o "$SAVE_PATH%(playlist_title)s/%(title)s.%(ext)s" $1
+	yt-dlp -o "$SAVE_PATH%(playlist_title)s/%(title)s.%(ext)s" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" $1
 elif [ "$SELECT" -eq "3" ]
 then
-	yt-dlp -o "$SAVE_PATH%(channel)s/%(title)s.%(ext)s" $1
+	yt-dlp -o "$SAVE_PATH%(channel)s/%(title)s.%(ext)s" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" $1
 elif [ "$SELECT" -eq "4" ]
 then
 	echo "1)動画"
